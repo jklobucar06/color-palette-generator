@@ -13,7 +13,7 @@ paletteContainer.addEventListener("click", (e) => {
                  .catch(err => console.log(err));
     }
     else if(e.target.classList.contains("color")) {
-        const colorBox = e.target.closest(".color");
+        const colorBox = e.target.closest(".color-box");
         const hexValue = colorBox.querySelector(".hex-value").textContent;
         const copyBtn = colorBox.querySelector(".copy-btn");
         navigator.clipboard
