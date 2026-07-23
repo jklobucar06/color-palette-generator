@@ -13,10 +13,12 @@ paletteContainer.addEventListener("click", (e) => {
                  .catch(err => console.log(err));
     }
     else if(e.target.classList.contains("color")) {
-        const hexValue = e.target.nextElementSibling.querySelector(".hex-value").textContent;
+        const colorBox = e.target.closest(".color");
+        const hexValue = colorBox.querySelector(".hex-value").textContent;
+        const copyBtn = colorBox.querySelector(".copy-btn");
         navigator.clipboard
                  .writeText(hexValue)
-                 .then(() => showCopySucccess(e.target))
+                 .then(() => showCopySucccess(copyBtn))
                  .catch(err => console.log(err));
     }
 });
